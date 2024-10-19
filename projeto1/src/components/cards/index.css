@@ -1,0 +1,12 @@
+.card {
+  @apply border border-gray-500 bg-gray-200 p-4 rounded-lg;
+  figure {
+    @apply bg-white flex justify-center items-center h-[200px] rounded-lg overflow-hidden;
+    img {
+      @apply object-fill h-full;
+    }
+  }
+  .title {
+    @apply p-2 text-2xl font-bold text-blue-400 py-2;
+  }
+}
