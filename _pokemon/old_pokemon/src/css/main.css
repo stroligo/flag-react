@@ -1,0 +1,238 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+body {
+  background: #102e44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  background: #fff;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 8px;
+}
+section .container {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  padding-bottom: 0.2rem;
+  color: #102e44;
+}
+.btn {
+  background: #1351b4;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 0;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background: #3c73cc;
+}
+
+#pokemonList {
+  background: #54c9e8;
+  padding: 1rem;
+  display: grid;
+  min-width: 700px;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 0.5rem;
+  border-radius: 8px;
+  height: fit-content;
+
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+#pokemonList > li {
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+#pokemonList > li:hover {
+  padding: 8px 12px;
+  background: #e5f9ff;
+  border-radius: 6px;
+}
+#pokemonList > li > a {
+  text-decoration: none;
+  color: #005d8f;
+}
+#pokemonList > .pokemon {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+#controller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+#pokemonQuiz {
+  overflow: hidden;
+  height: 80vh;
+  width: 80vw;
+  position: relative;
+  border-radius: 10px;
+}
+#background {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#background > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#answers {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: rgba(255, 255, 255, 0.661);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.btnCorreta {
+  background: #13b469;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 0;
+  transition: all 0.2s;
+}
+.btnErrada {
+  background: #b41313;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 0;
+  transition: all 0.2s;
+}
+
+/* Nome do Pokémon (sem transição) */
+#pokemonName {
+  z-index: 99;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  background: #4361b5b5;
+  color: #ffcb04;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: black 1px 0 10px;
+  letter-spacing: 4px;
+
+  padding: 5px 20px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: none; /* Sem transição para o nome */
+}
+#pokemonName.escondido {
+  opacity: 0;
+  transition: none; /* Sem transição na opacidade do nome */
+}
+
+/* Imagem do Pokémon (com transição) */
+#pokemonSecret {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+#pokemonSecret img {
+  max-width: 400px;
+  max-height: 400px;
+  transition: all 1s ease-out; /* Transição aplicada somente à imagem */
+}
+#pokemonSecret.escondido img {
+  filter: invert(1) brightness(0) contrast(100%);
+  transition: all 1s ease-out; /* Aplica transição apenas na opacidade da imagem */
+}
+
+#scoreBoard {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  background: #4361b5b5;
+  color: #ffcb04;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: black 1px 0 10px;
+  letter-spacing: 4px;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+#controllerQuiz {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+.btnRandom {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffcb04;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btnRandom:hover {
+  background: #ffa304;
+  transition: all 0.2s;
+}
+#nextBtn img {
+  width: 15px;
+  height: 15px;
+}
+
+#pokedetails {
+  background: red;
+  width: 200px;
+  height: 200px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Trading Card</title>
+
+    <link href="./src/css/card.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <section>
+
+        <div class="container">
+            <div class="card_frame">
+                <div class="card_body">
+                    <div class="card_head">
+                        <div class="card_main">
+
+                            <div>
+                                <h5>Basic Pokemon </h5>
+                                <h1 class="name" id="pokemonName"></h1>
+                            </div>
+
+                            <div style="display: flex; gap:10px;">
+                                <div class="health"><span id="pokemonHP"></span> HP</div>
+                                <div id="pokemonTypes"></div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="img_frame">
+                            <figure class="escondido" id="pokemonImg"></figure>
+                        </div>
+
+                        <div class="poke_facts">
+                            <span>
+                                Length: <span id="pokemonAltura"></span>m, Weight: <span id="pokemonPeso"></span>kg
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="poke_attacks">
+
+                        <div class="first_attack">
+                            <div><strong>Ataque:</strong> <span id="pokemonAttack"></span></div>
+                            <div><strong>Defesa:</strong> <span id="pokemonDefense"></span></div>
+                            <div><strong>Velocidade:</strong> <span id="pokemonSpeed"></span></div>
+                            <div><strong>Habilidades:</strong> <span id="pokemonAbilities"></span></div>
+                        </div>
+                        <hr class="hr_1">
+
+                    </div>
+
+                    <div class="copyinfo">
+                        <span>&copy;1995, 96, 98 Nintendo </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div style="padding: 10px;">
+            <a href="pokelista.html" style="color: white;">Voltar</a>
+        </div>
+
+    </section>
+
+
+    <script src="./src/js/details.js"></script>
+</body>
+
+</html>

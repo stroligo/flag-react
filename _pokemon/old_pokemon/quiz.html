@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Pokemon</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+</head>
+
+<body>
+    <section style="padding: .5rem;">
+
+        <div class="container">
+            <!-- Exibe o nome do Pokémon -->
+            <div id="pokemonQuiz">
+                <div id="scoreBoard">SCORE: <span id="score">0</span> </div>
+                <div id="pokemonSecret" class="escondido">
+
+                </div>
+
+                <div id="answers">
+
+                </div>
+
+                <figure id="background">
+                    <div id="pokemonName"></div>
+                    <img src="./src/img/quiz.webp" alt="">
+                </figure>
+
+                <div id="controllerQuiz">
+                    <button id="nextBtn" class="btnRandom">
+                        <img src="./src/img/random-icon.webp" alt="">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="src/js/quiz.js"></script>
+</body>
+
+</html>

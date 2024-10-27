@@ -1,0 +1,223 @@
+/* Codigo retirado de https://codepen.io/brendanpettis/pen/MrMdwZ */
+body {
+  background: #102e44;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Cabin', sans-serif;
+  text-shadow: 0 0 0.05em rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+section {
+  width: fit-content;
+}
+
+.container {
+  position: relative;
+  width: 474px;
+}
+.container:after {
+  content: '';
+  display: block;
+  padding-top: 698px;
+}
+.card_frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 15px;
+  background: linear-gradient(to top, #ffe50a, #ffea3d 70%, #ffe50a);
+  box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
+}
+
+.card_body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 26px;
+  background-image: url(../img/texturacard.png);
+  background-size: cover;
+  z-index: 1;
+}
+
+.card_head {
+  padding: 0 5.1%;
+}
+
+h5 {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.fire_type {
+  width: 31px;
+  height: 31px;
+  margin-bottom: -4.5px;
+  border-radius: 100px;
+}
+
+.img_frame {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin-bottom: 10px;
+
+  padding: 0;
+
+  background: url(../../src/img/types/background.jpeg);
+  background-size: cover;
+  /*  background: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a); */
+  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+.img_frame figure {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 320px;
+  box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  object-fit: cover;
+}
+.img_frame figure img {
+  padding: 10px;
+
+  max-height: 90%;
+
+  object-fit: cover;
+}
+
+.img_frame:before,
+.img_frame:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 3.5%;
+  width: 5%;
+}
+.img_frame:before {
+  left: 1.2%;
+  background: linear-gradient(to right, rgba(170, 96, 7, 0.5), transparent);
+  transform: skew(45deg);
+}
+.img_frame:after {
+  right: 1.2%;
+  background: linear-gradient(to left, rgba(170, 96, 7, 0.5), transparent);
+  transform: skew(-45deg);
+}
+
+.poke_facts {
+  position: relative;
+  height: 20px;
+  margin: 0 19px;
+  text-align: center;
+  background: linear-gradient(to top, #fff85d, #fbde02 10%, #ba7500 80%);
+}
+.poke_facts:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0.3% 0 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #cf9401 2%,
+    #f9d51e,
+    #ffff7a,
+    #cf9401 98%,
+    transparent
+  );
+}
+.poke_facts > span {
+  font-size: 13px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.single_energy_type,
+.single_energy_type1,
+.multi_energy_type1,
+.multi_energy_type2,
+.multi_energy_type3 {
+  border-radius: 100px;
+  width: 25px;
+  height: 25px;
+}
+
+.attack_text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.copyinfo {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.first_attack {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#pokemonTypes {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+}
+.typeElement {
+  margin: 0;
+  padding: 0;
+}
+.typeElement > img {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+}
+.health {
+  font-weight: 700;
+  font-size: 26px;
+  font-family: 'Century Gothic', 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: rgb(163, 13, 13);
+}
+.card_main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  /*   height: 50px; */
+}
+.name {
+  font-size: 28px;
+  text-transform: capitalize;
+  margin: 0;
+}
