@@ -1,11 +1,13 @@
 const api = {
-  getPokemonsList: async () => {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
+  getPokemonsList: async (offset = 0, limit = 25) => {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
+    );
     const data = await response.json();
     return data.results;
   },
 
-  getPokemonByName: async (name) => {
+  getPokemonDetails: async (name) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = await response.json();
     return data;

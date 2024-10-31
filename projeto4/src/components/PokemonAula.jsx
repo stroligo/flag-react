@@ -4,22 +4,33 @@ import Card from './Card';
 
 function PokemonAula() {
   const [pokeList, setPokelist] = useState([]);
-  const [pokemonSelected, setPokemonSelected] = useState([]);
+  const [pokemonSelected, setPokemonSelected] = useState({ name: '' });
+  const [offset, setOffset] = useState(0);
+  const itensPerPage = 15;
 
   useEffect(() => {
-    api.getPokemonsList().then((data) => setPokelist(data));
-  }, []);
+    api.getPokemonsList(offset, itensPerPage).then((data) => {
+      setPokelist(data);
 
-  useEffect(() => {
-    if (pokeList.length > 0) {
-      api
-        .getPokemonByName(pokeList[0].name)
-        .then((data) => setPokemonSelected(data));
+      api.getPokemonDetails(data[0].name).then((details) => {
+        setPokemonSelected(details);
+      });
+    });
+  }, [offset]);
+
+  const handleNext = () => {
+    setOffset(offset + itensPerPage);
+  };
+  const handlePrevious = () => {
+    if (offset > 0) {
+      setOffset(offset - itensPerPage);
     }
-  }, [pokeList]); // Dependência é o estado pokeList, o efeito é executado sempre que ele muda
+  };
 
   const handlePokemonSelect = (name) => {
-    api.getPokemonByName(name).then((data) => setPokemonSelected(data));
+    api.getPokemonDetails(name).then((details) => {
+      setPokemonSelected(details);
+    });
   };
 
   return (
@@ -30,7 +41,9 @@ function PokemonAula() {
           <ul className="flex flex-col gap-2">
             {pokeList.map((item) => (
               <li
-                className="hover:text-red-500 cursor-pointer"
+                className={`hover:text-red-500 cursor-pointer ${
+                  item.name === pokemonSelected.name ? 'text-red-500' : ''
+                }`}
                 key={item.name}
                 onClick={() => handlePokemonSelect(item.name)}
               >
@@ -38,6 +51,12 @@ function PokemonAula() {
               </li>
             ))}
           </ul>
+          <div className="py-2 my-2 bg-blue-300 p-1 flex justify-between">
+            <button onClick={handlePrevious} disabled={offset === 0}>
+              Anterior
+            </button>
+            <button onClick={handleNext}>Próximo</button>
+          </div>
         </aside>
         <div className=" bg-gray-100 w-full p-6 rounded-lg">
           <div className="font-bold pb-3">Pokemon Selected:</div>

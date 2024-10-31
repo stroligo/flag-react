@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
 function Card({ pokemonSelected }) {
+  if (!pokemonSelected || typeof pokemonSelected !== 'object') return null;
+
   const { name, sprites, types, weight } = pokemonSelected;
 
   return (
@@ -21,7 +23,8 @@ function Card({ pokemonSelected }) {
         ))}
       </div>
       <div>
-        <span className="font-bold">Peso:</span> {weight}
+        <span className="font-bold">Peso:</span>
+        <span> {weight}</span>
       </div>
     </div>
   );
