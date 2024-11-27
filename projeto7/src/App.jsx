@@ -1,55 +1,30 @@
-import { useState } from 'react';
-
-export function App() {
-  const [names, setNames] = useState(['pedro', 'maria', 'joao']);
-  const [newName, setNewName] = useState('');
-  const [namesDeleted, setNamesDeleted] = useState([]);
-
-  function addName() {
-    setNames([...names, newName]);
-    setNewName(''); // limpa o input após adicionar o nome
-  }
-
-  function handleChange(event) {
-    setNewName(event.target.value);
-  }
-
-  function removeName(nameToRemove) {
-    setNames(names.filter((name) => name !== nameToRemove));
-    setNamesDeleted([...namesDeleted, nameToRemove]);
-  }
-
-  function restoreName(nameToRestore) {
-    setNames([...names, nameToRestore]);
-    setNamesDeleted(namesDeleted.filter((name) => name !== nameToRestore));
-  }
-
-  function deleteDefinitively(nameToDelete) {
-    setNamesDeleted(namesDeleted.filter((name) => name !== nameToDelete));
-  }
-
+function HomePage() {
   return (
-    <div>
-      <h1>App</h1>
-      <div>Nome a ser adicionado: {newName}</div>
-      <input type="text" value={newName} onChange={handleChange} />
-      <button onClick={addName}>ADD NAME</button>
-      <h2>Nomes atuais:</h2>
-      {names.map((name) => (
-        <div key={name}>
-          {name} <button onClick={() => removeName(name)}>Remover</button>
+    <>
+      <section className="relative w-full h-96 bg-cover bg-center">
+        <img
+          className="w-full h-full object-cover"
+          src="./images/image.png"
+          alt="Imagem de Destaque"
+        />
+        <div className="absolute inset-0"></div>
+        <div className="absolute bottom-0 right-0 p-14 text-white">
+          <span className="text-3xl md:text-5xl font-bold">
+            Bem-vindo ao Site
+          </span>
         </div>
-      ))}
-      <h2>Nomes deletados:</h2>
-      {namesDeleted.map((name) => (
-        <div key={name}>
-          {name}
-          <button onClick={() => restoreName(name)}>Restaurar</button>
-          <button onClick={() => deleteDefinitively(name)}>
-            Excluir definitivamente
-          </button>
+      </section>
+
+      <section className="flex flex-col mt-10">
+        <div className="bg-orange-500 w-40 h-40 font-bold">
+          <img src="" alt="img-city" />
+          <span>Berlin</span>
+          <br />
+          <span>12-07-2021</span>
         </div>
-      ))}
-    </div>
+      </section>
+    </>
   );
 }
+
+export default HomePage;
